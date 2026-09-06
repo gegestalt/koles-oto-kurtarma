@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gegestalt.github.io/koles-oto-kurtarma/sitemap.xml
+Sitemap: https://koles-oto-kurtarma.vercel.app/sitemap.xml
