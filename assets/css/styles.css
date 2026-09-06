@@ -355,47 +355,6 @@ button:focus-visible {
   letter-spacing: -0.01em;
 }
 .area-note { color: var(--gray); font-size: 15px; margin-bottom: 0; }
-.area-more { font-weight: 700; white-space: nowrap; }
-
-/* ============================================
-   HİZMET BÖLGELERİ (detaylı bölge dizini)
-   ============================================ */
-.region-lede {
-  max-width: 640px;
-  color: var(--gray-dark);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-.region-zones { display: flex; flex-direction: column; gap: 32px; }
-.region-zone-head { margin-bottom: 16px; }
-.region-badge {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--red);
-  margin-bottom: 6px;
-}
-.region-zone-head h3 { font-size: 1.15rem; font-weight: 800; }
-.region-zone-note { color: var(--gray); font-size: 14px; margin-top: 4px; margin-bottom: 0; }
-.region-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-.region-card {
-  padding: 18px 20px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-lg);
-  background: var(--paper);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.region-card h4 { font-size: 14px; font-weight: 800; }
-.region-card p { color: var(--gray-dark); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0; }
-.region-card p span { color: var(--gray); }
 
 /* ============================================
    PHOTOS
@@ -541,15 +500,8 @@ button:focus-visible {
   color: var(--paper);
   border-top: 4px solid var(--red);
 }
-.footer-areas {
-  padding: 20px 88px 0 20px;
-  font-size: 0.85rem;
-  line-height: 1.7;
-  color: rgba(243, 242, 242, 0.75);
-}
-.footer-areas strong { color: var(--paper); }
 .footer-inner {
-  padding: 20px 88px 28px 20px;
+  padding: 28px 88px 28px 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -628,7 +580,6 @@ button:focus-visible {
 
 @media (min-width: 700px) {
   .features { grid-template-columns: repeat(2, 1fr); }
-  .region-cards { grid-template-columns: repeat(2, 1fr); }
 
   .footer-inner {
     flex-direction: row;
