@@ -357,30 +357,27 @@ button:focus-visible {
 .area-note { color: var(--gray); font-size: 15px; margin-bottom: 0; }
 
 /* ============================================
-   TRUCK ILLUSTRATION (in the "Ne yapıyoruz" art panel)
+   PHOTOS
    ============================================ */
-.truck-figure { width: 220px; height: auto; }
-.truck-figure .truck-shadow { fill: rgba(32, 30, 29, 0.25); }
-.truck-figure .truck-arm { fill: var(--ink); }
-.truck-figure .truck-hook { fill: var(--red); }
-.truck-figure .truck-bed { fill: var(--white); stroke: var(--ink); stroke-width: 3; rx: 8px; }
-.truck-figure .truck-chassis { fill: var(--ink); rx: 8px; }
-.truck-figure .truck-bumper { fill: var(--ink); rx: 5px; }
-.truck-figure .truck-cab { fill: var(--red); stroke: var(--ink); stroke-width: 3; }
-.truck-figure .truck-window { fill: var(--white); }
-.truck-figure .wheel-tire { fill: var(--ink); stroke: var(--white); stroke-width: 2; }
-.truck-figure .wheel-hub { fill: var(--white); }
-.truck-figure .wheel-spoke { fill: var(--red); rx: 2px; }
-
-.truck-figure .truck-body { animation: truck-bounce 0.9s ease-in-out infinite; }
-.truck-figure .wheel { animation: wheel-spin 0.7s linear infinite; }
-@keyframes truck-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-5px); }
+.split-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-@keyframes wheel-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--ink);
 }
 
 /* ============================================
@@ -563,7 +560,6 @@ button:focus-visible {
   .split { flex-direction: row; align-items: stretch; }
   .split-art { flex: 0 0 42%; min-height: auto; border-bottom: none; border-right: 2px solid var(--ink); }
   .split-body { flex: 1; padding: 44px 40px; }
-  .truck-figure { width: 260px; }
 }
 
 @media (min-width: 900px) {
@@ -571,4 +567,5 @@ button:focus-visible {
   .nav-links { display: flex; }
   .menu-toggle { display: none; }
   .features { grid-template-columns: repeat(4, 1fr); }
+  .gallery { grid-template-columns: repeat(4, 1fr); }
 }
