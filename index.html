@@ -76,11 +76,29 @@
   },
   "areaServed": [
     { "@type": "Place", "name": "Urla" },
-    { "@type": "Place", "name": "Güzelbahçe" },
-    { "@type": "Place", "name": "Zeytinler" },
     { "@type": "Place", "name": "Gülbahçe" },
+    { "@type": "Place", "name": "Zeytinalanı" },
+    { "@type": "Place", "name": "Zeytinler" },
+    { "@type": "Place", "name": "Balıklıova" },
+    { "@type": "Place", "name": "Güzelbahçe" },
+    { "@type": "Place", "name": "Narlıdere" },
+    { "@type": "Place", "name": "Balçova" },
+    { "@type": "Place", "name": "Karabağlar" },
+    { "@type": "Place", "name": "Gaziemir" },
+    { "@type": "Place", "name": "Menderes" },
+    { "@type": "Place", "name": "Seferihisar" },
+    { "@type": "Place", "name": "Sığacık" },
+    { "@type": "Place", "name": "Özdere" },
+    { "@type": "Place", "name": "Gümüldür" },
+    { "@type": "Place", "name": "Ürkmez" },
+    { "@type": "Place", "name": "Karaburun" },
     { "@type": "Place", "name": "Mordoğan" },
-    { "@type": "Place", "name": "Narlıdere" }
+    { "@type": "Place", "name": "Çeşme" },
+    { "@type": "Place", "name": "Alaçatı" },
+    { "@type": "Place", "name": "Bayraklı" },
+    { "@type": "Place", "name": "Konak" },
+    { "@type": "Place", "name": "Karşıyaka" },
+    { "@type": "Place", "name": "Çiğli" }
   ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oto Çekici Hizmeti" } },
@@ -110,7 +128,7 @@
       "name": "Hangi bölgelere hizmet veriyorsunuz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Urla, Güzelbahçe, Zeytinler, Gülbahçe, Mordoğan ve Narlıdere bölgelerinde 7/24 hizmet veriyoruz."
+        "text": "Urla merkezli yaklaşık 50 kilometrelik yarıçapta hizmet veriyoruz: Urla, Gülbahçe, Zeytinalanı, Güzelbahçe, Narlıdere, Balçova, Seferihisar, Menderes, Karaburun, Çeşme ve Alaçatı dahil."
       }
     },
     {
@@ -243,11 +261,119 @@
       </div>
     </div>
 
-    <!-- ===== HİZMET BÖLGESİ ===== -->
-    <div class="container area-block" id="bolgeler" aria-labelledby="bolgeler-baslik">
-      <h2 class="eyebrow-title" id="bolgeler-baslik">Hizmet bölgesi</h2>
+    <!-- ===== HİZMET BÖLGESİ (özet) ===== -->
+    <div class="container area-block" id="bolge-ozet" aria-labelledby="bolge-ozet-baslik">
+      <h2 class="eyebrow-title" id="bolge-ozet-baslik">Hizmet bölgesi</h2>
       <p class="area-line">Urla · Güzelbahçe · Narlıdere · Zeytinler · Gülbahçe · Mordoğan</p>
-      <p class="area-note">Urla ve çevresinin tamamı. Konumdan emin değilseniz arayın, söyleyelim.</p>
+      <p class="area-note">Urla merkezli ~50 km yarıçapın tamamı. <a href="#bolgeler" class="area-more">Tüm bölgeleri gör →</a></p>
+    </div>
+  </section>
+
+  <!-- ===== HİZMET BÖLGELERİ (detaylı dizin) ===== -->
+  <section class="section section-alt" id="bolgeler" aria-labelledby="bolgeler-baslik">
+    <div class="container">
+      <h2 class="eyebrow-title" id="bolgeler-baslik">Hizmet Bölgeleri</h2>
+      <p class="region-lede">Urla merkezli yaklaşık 50 kilometrelik yarıçapta aşağıdaki ilçe, belde ve yerleşimlerin tamamına oto çekici, yol yardım ve akü takviye hizmeti veriyoruz. Listede olmayan bir noktadaysanız da arayın — yarımadanın her yerine çıkıyoruz.</p>
+
+      <div class="region-zones">
+        <div class="region-zone">
+          <div class="region-zone-head">
+            <span class="region-badge">0–15 km</span>
+            <h3>Merkez ve Yakın Çevre</h3>
+          </div>
+          <div class="region-cards">
+            <div class="region-card">
+              <h4>Urla Merkez ve Mahalleleri</h4>
+              <p>İskele, Çamlıçay, Kalabak, Güvendik, İçmeler, Kuşçular, Yağcılar, Demircili, Bademler, Özbek</p>
+            </div>
+            <div class="region-card">
+              <h4>Gülbahçe &amp; Zeytinalanı</h4>
+              <p>Gülbahçe, Balıklıova, Zeytinalanı, Zeytinler</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="region-zone">
+          <div class="region-zone-head">
+            <span class="region-badge">15–35 km</span>
+            <h3>Doğu ve Kuzeydoğu Aksı</h3>
+          </div>
+          <div class="region-cards">
+            <div class="region-card">
+              <h4>Güzelbahçe</h4>
+              <p>Yelki, Kahramandere, Siteler, Çamlı</p>
+            </div>
+            <div class="region-card">
+              <h4>Narlıdere</h4>
+              <p>Sahilevleri, Ilıca, Limanreis</p>
+            </div>
+            <div class="region-card">
+              <h4>Balçova</h4>
+              <p>İnciraltı, Eğitim, Korutürk</p>
+            </div>
+            <div class="region-card">
+              <h4>Karabağlar &amp; Gaziemir</h4>
+              <p>Uzundere, Aktepe, Sarnıç <span>(çevre yolu bağlantılı)</span></p>
+            </div>
+            <div class="region-card">
+              <h4>Menderes (Kuzey Batı Kesimi)</h4>
+              <p>Cumaovası, Değirmendere, İtaat, Küner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="region-zone">
+          <div class="region-zone-head">
+            <span class="region-badge">15–40 km</span>
+            <h3>Güney ve Güneydoğu Aksı</h3>
+          </div>
+          <div class="region-cards">
+            <div class="region-card">
+              <h4>Seferihisar</h4>
+              <p>Seferihisar Merkez, Sığacık, Akarca, Düzce, Ulamış</p>
+            </div>
+            <div class="region-card">
+              <h4>Menderes Sahil Şeridi</h4>
+              <p>Özdere, Gümüldür, Ürkmez, Payamlı</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="region-zone">
+          <div class="region-zone-head">
+            <span class="region-badge">30–50 km</span>
+            <h3>Batı Aksı</h3>
+          </div>
+          <div class="region-cards">
+            <div class="region-card">
+              <h4>Karaburun Yarımadası</h4>
+              <p>Mordoğan, Balıklıova, Kaynarpınar, Küçükbahçe, Karaburun Merkez</p>
+            </div>
+            <div class="region-card">
+              <h4>Çeşme &amp; Alaçatı</h4>
+              <p>Alaçatı, Reisdere, Şifne, Ildır, Germiyan, Ovacık, Çeşme Merkez</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="region-zone">
+          <div class="region-zone-head">
+            <span class="region-badge">~40–50 km</span>
+            <h3>Kuzey / Körfez Karşısı</h3>
+            <p class="region-zone-note">Deniz ve otoyol erişimi ile</p>
+          </div>
+          <div class="region-cards">
+            <div class="region-card">
+              <h4>Bayraklı &amp; Konak</h4>
+              <p>Alsancak, Göztepe, Hatay, Üçkuyular</p>
+            </div>
+            <div class="region-card">
+              <h4>Karşıyaka &amp; Çiğli</h4>
+              <p>Bostanlı, Mavişehir, Çiğli Sanayi <span>(otoyol / çevre yolu bağlantısıyla)</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -312,7 +438,7 @@
             Hangi bölgelere hizmet veriyorsunuz?
             <svg class="icon faq-chevron" aria-hidden="true"><use href="#icon-chevron"></use></svg>
           </summary>
-          <p>Urla, Güzelbahçe, Zeytinler, Gülbahçe, Mordoğan ve Narlıdere bölgelerinde 7/24 hizmet veriyoruz.</p>
+          <p>Urla merkezli yaklaşık 50 kilometrelik yarıçapta hizmet veriyoruz: Urla, Gülbahçe, Zeytinalanı, Güzelbahçe, Narlıdere, Balçova, Seferihisar, Menderes, Karaburun, Çeşme ve Alaçatı dahil. <a href="#bolgeler">Tüm bölgeleri gör →</a></p>
         </details>
         <details class="faq-item">
           <summary>
@@ -352,6 +478,9 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
+  <div class="container footer-areas">
+    <strong>Hizmet Bölgesi:</strong> Urla, Gülbahçe, Zeytinalanı, Zeytinler, Balıklıova, Güzelbahçe, Narlıdere, Balçova, Karabağlar, Gaziemir, Menderes, Seferihisar, Sığacık, Özdere, Gümüldür, Ürkmez, Karaburun, Mordoğan, Çeşme, Alaçatı, Bayraklı, Konak, Karşıyaka, Çiğli
+  </div>
   <div class="container footer-inner">
     <p>Koleş Oto Kurtarma · Kemal Koleş<br>Urla / İzmir · 7/24 oto çekici ve yol yardım</p>
     <a href="tel:+905522140398" class="footer-phone">0552 214 03 98</a>
