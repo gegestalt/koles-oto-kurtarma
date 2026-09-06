@@ -545,6 +545,35 @@ button:focus-visible {
 /* ============================================
    RESPONSIVE
    ============================================ */
+
+/* Compact the big red poster blocks on small screens — less padding,
+   smaller type, tighter gutters, so they don't dominate the screen. */
+@media (max-width: 640px) {
+  .hero {
+    padding: 32px 0 28px;
+    margin: 10px 10px 0;
+  }
+  .eyebrow { margin-bottom: 12px; }
+  .hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); line-height: 1.02; }
+  .hero-text { font-size: 1rem; margin-bottom: 20px; }
+  .hero-cta { gap: 10px; }
+  .btn { padding: 13px 20px; font-size: 0.9rem; }
+  .btn-phone-block { padding: 14px 18px; }
+  .btn-phone-block .btn-number { font-size: 1.4rem; }
+
+  .section-flush,
+  .section-alt { margin: 10px; }
+  .section-contact {
+    padding: 32px 0;
+    margin: 0 10px 10px;
+  }
+  .closing-title { font-size: clamp(1.5rem, 7vw, 2rem); margin-bottom: 22px; }
+  .contact-box { padding: 22px 18px; }
+  .contact-phone { font-size: 1.5rem; }
+
+  .section { padding: 36px 0; }
+}
+
 @media (min-width: 700px) {
   .features { grid-template-columns: repeat(2, 1fr); }
 
