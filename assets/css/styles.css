@@ -1,26 +1,27 @@
 /* ============================================
    Koleş Oto Kurtarma — Stil Dosyası
-   Renk teması: Sarı / Siyah / Beyaz / Kırmızı
+   Yön: 1B — Afiş (poster). Kırmızı / mürekkep siyahı / kağıt beyazı.
    ============================================ */
 
 :root {
-  --yellow: #FFC800;
-  --yellow-dark: #E0AC00;
-  --black: #121212;
-  --black-soft: #1E1E1E;
+  --red: #EC3013;
+  --red-dark: #AE1800;
+  --ink: #201E1D;
+  --paper: #F3F2F2;
+  --paper-dim: #EAE9E9;
+  --canvas: #E4E2E2;
+  --line: rgba(32, 30, 29, 0.4);
+  --gray: #605D5D;
+  --gray-dark: #444141;
   --white: #FFFFFF;
-  --off-white: #F7F7F5;
-  --red: #E4032E;
-  --red-dark: #B8021F;
-  --gray: #55565A;
-  --gray-light: #DADADA;
 
-  --font-heading: 'Poppins', system-ui, sans-serif;
-  --font-body: 'Rubik', system-ui, sans-serif;
+  --font: 'Archivo', system-ui, sans-serif;
+  --header-h: 64px;
 
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --header-h: 128px;
+  --radius-sm: 12px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-full: 999px;
 }
 
 /* ===== Reset ===== */
@@ -28,16 +29,16 @@
 html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 body {
   margin: 0;
-  font-family: var(--font-body);
-  color: var(--black);
-  background: var(--off-white);
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--canvas);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
-h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; margin: 0 0 0.5em; }
+h1, h2, h3 { font-family: var(--font); line-height: 1.1; margin: 0 0 0.5em; }
 p { margin: 0 0 1em; }
 .container {
   max-width: 1160px;
@@ -45,7 +46,6 @@ p { margin: 0 0 1em; }
   padding: 0 20px;
 }
 
-/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
@@ -56,23 +56,22 @@ p { margin: 0 0 1em; }
   position: absolute;
   left: 10px;
   top: -60px;
-  background: var(--yellow);
-  color: var(--black);
-  font-weight: 700;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 800;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: var(--radius-full);
   z-index: 1000;
   transition: top 0.2s ease;
 }
-.skip-link:focus {
-  top: 10px;
-}
+.skip-link:focus { top: 10px; }
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--red);
   outline-offset: 2px;
-  border-radius: 4px;
 }
+
+.icon { width: 1.2em; height: 1.2em; vertical-align: -0.2em; flex-shrink: 0; }
 
 /* ===== Buttons ===== */
 .btn {
@@ -80,41 +79,68 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
-  padding: 12px 20px;
-  border-radius: 999px;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 18px 26px;
   border: 2px solid transparent;
+  border-radius: var(--radius-full);
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
 
-/* ===== Icon base (inline SVG via <use>, colored with currentColor) ===== */
-.icon {
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: -0.2em;
-  flex-shrink: 0;
+/* white block CTA (used on red backgrounds) */
+.btn-phone-block {
+  background: var(--paper);
+  color: var(--ink);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 20px 28px;
+  border-radius: var(--radius-lg);
+}
+.btn-phone-block .btn-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.btn-phone-block .btn-number {
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1;
 }
 
+/* bordered ghost CTA (used on red backgrounds) */
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* solid white-on-ink CTA */
+.btn-solid-light {
+  background: var(--paper);
+  color: var(--ink);
+}
+.btn-solid-light:hover { background: var(--white); }
+
+/* solid red CTA (drawer) */
 .btn-call {
   background: var(--red);
   color: var(--white);
-  box-shadow: 0 6px 16px rgba(228, 3, 46, 0.35);
 }
 .btn-call:hover { background: var(--red-dark); }
 
-.btn-whatsapp {
-  background: #25D366;
+.btn-ghost-drawer {
+  background: transparent;
   color: var(--white);
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  border-color: var(--white);
 }
-.btn-whatsapp:hover { background: #1DA851; }
-
-.btn-lg { padding: 15px 26px; font-size: 1.05rem; }
+.btn-ghost-drawer:hover { background: rgba(255, 255, 255, 0.08); }
 
 /* ============================================
    NAVBAR
@@ -123,85 +149,46 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 500;
-  background: var(--black);
-  border-bottom: 4px solid var(--yellow);
+  background: var(--red);
+  border-bottom: 2px solid var(--ink);
 }
-
 .nav-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 10px 16px;
-  max-width: 1160px;
-  margin: 0 auto;
+  gap: 16px;
+  padding: 18px 20px;
 }
-
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-.brand-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--red);
-  color: var(--white);
-  flex-shrink: 0;
-}
-.brand-badge .icon { width: 18px; height: 18px; vertical-align: 0; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-name {
-  font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.3rem;
-  color: var(--yellow);
-}
-.brand-sub {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
+  font-size: 17px;
+  letter-spacing: 0.01em;
   color: var(--white);
+  flex-shrink: 0;
 }
-
 .nav-links {
   display: none;
-  gap: 22px;
+  align-items: center;
+  gap: 26px;
 }
 .nav-links a {
   color: var(--white);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 6px 2px;
+  padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 .nav-links a:hover,
-.nav-links a:focus-visible {
-  color: var(--yellow);
-  border-color: var(--yellow);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-call {
-  display: none;
-  padding: 9px 16px;
-  font-size: 0.85rem;
+.nav-links a:focus-visible { border-color: var(--white); }
+.nav-phone {
+  font-weight: 800 !important;
+  border-bottom: none !important;
 }
 
 .menu-toggle {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,100 +202,13 @@ button:focus-visible {
 .menu-toggle span {
   width: 24px;
   height: 3px;
-  background: var(--yellow);
-  border-radius: 2px;
+  background: var(--white);
+  border-radius: var(--radius-full);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* --- Tow truck illustration strip: the navbar centerpiece ---
-   The truck stays centered in place: wheels spin continuously and the
-   body bounces on its suspension, while the road markings scroll
-   beneath it to sell the sense of motion. */
-.truck-strip {
-  position: relative;
-  height: 88px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.road-dashes {
-  position: absolute;
-  left: 0;
-  bottom: 16px;
-  width: 200%;
-  height: 5px;
-  background-image: repeating-linear-gradient(
-    90deg,
-    var(--yellow) 0 30px,
-    transparent 30px 60px
-  );
-  animation: road-scroll 1.4s linear infinite;
-}
-@keyframes road-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-60px); }
-}
-
-.road-caution {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--yellow) 0 12px,
-    var(--black) 12px 24px
-  );
-}
-
-.truck-figure {
-  position: relative;
-  z-index: 2;
-  width: 150px;
-  height: auto;
-  filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.45));
-}
-.truck-figure .truck-shadow { fill: rgba(0, 0, 0, 0.35); }
-.truck-figure .truck-body { fill: none; }
-.truck-figure .truck-arm { fill: var(--black); }
-.truck-figure .truck-hook { fill: var(--red); }
-.truck-figure .truck-bed { fill: var(--yellow); stroke: var(--black); stroke-width: 4; }
-.truck-figure .truck-chassis { fill: var(--black); }
-.truck-figure .truck-bumper { fill: var(--black); }
-.truck-figure .truck-cab { fill: var(--red); stroke: var(--black); stroke-width: 4; }
-.truck-figure .truck-window { fill: var(--white); opacity: 0.92; }
-.truck-figure .truck-beacon { fill: var(--yellow); animation: beacon-flash 1s ease-in-out infinite; }
-.truck-figure .wheel-tire { fill: var(--black); stroke: var(--gray-light); stroke-width: 2; }
-.truck-figure .wheel-hub { fill: var(--gray-light); }
-.truck-figure .wheel-spoke { fill: var(--yellow); }
-
-.truck-figure .truck-body {
-  animation: truck-bounce 0.9s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-.truck-figure .wheel {
-  animation: wheel-spin 0.7s linear infinite;
-}
-@keyframes truck-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-5px); }
-}
-@keyframes wheel-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes beacon-flash {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.35; }
-}
 
 /* Mobile nav drawer */
 .nav-drawer {
@@ -317,8 +217,10 @@ button:focus-visible {
   right: 0;
   height: 100%;
   width: min(80vw, 320px);
-  background: var(--black);
-  border-left: 4px solid var(--yellow);
+  background: var(--ink);
+  border-left: 2px solid var(--red);
+  border-top-left-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -332,7 +234,7 @@ button:focus-visible {
   color: var(--white);
   font-weight: 600;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .nav-drawer .btn { margin-top: 14px; width: 100%; }
 
@@ -348,159 +250,160 @@ button:focus-visible {
 .nav-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ============================================
-   HERO
+   HERO (poster)
    ============================================ */
 .hero {
-  position: relative;
-  background: var(--black);
-  color: var(--white);
-  padding: 56px 0 60px;
-  overflow: hidden;
-}
-.hero-stripes {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 200, 0, 0.06) 0 24px,
-    transparent 24px 48px
-  );
-  pointer-events: none;
-}
-.hero-inner { position: relative; text-align: center; }
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   background: var(--red);
   color: var(--white);
+  padding: 56px 0 48px;
+  margin: 16px 16px 0;
+  border-radius: var(--radius-xl);
+}
+.eyebrow {
+  font-size: 13px;
   font-weight: 700;
-  font-size: 0.8rem;
   letter-spacing: 0.04em;
-  padding: 6px 14px;
-  border-radius: 999px;
   margin-bottom: 18px;
+  opacity: 0.92;
 }
 .hero h1 {
-  font-size: clamp(1.9rem, 6vw, 3.1rem);
+  font-size: clamp(2.4rem, 8vw, 5rem);
   font-weight: 800;
-  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  max-width: 18ch;
 }
-.hero h1 .highlight { color: var(--yellow); }
 .hero-text {
-  max-width: 620px;
-  margin: 0 auto 28px;
-  color: var(--gray-light);
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 500;
+  max-width: 40ch;
+  line-height: 1.4;
+  margin-bottom: 28px;
 }
-.hero-text strong { color: var(--yellow); }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 14px;
-  margin-bottom: 26px;
+  align-items: stretch;
 }
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 18px;
-  font-size: 0.9rem;
-  color: var(--gray-light);
-}
-.hero-badges li { display: flex; align-items: center; gap: 6px; }
-.hero-badges .icon { color: var(--yellow); }
 
 /* ============================================
-   SECTIONS
+   NE YAPIYORUZ (split section)
    ============================================ */
-.section { padding: 64px 0; }
-.section-alt { background: var(--white); }
-.section-title {
-  text-align: center;
-  font-size: clamp(1.5rem, 4vw, 2.1rem);
+.section-flush {
+  background: var(--paper);
+  margin: 16px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.split {
+  display: flex;
+  flex-direction: column;
+}
+.split-art {
+  position: relative;
+  min-height: 220px;
+  background: var(--paper-dim);
+  background-image: repeating-linear-gradient(135deg, rgba(32, 30, 29, 0.09) 0 10px, transparent 10px 20px);
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.split-body { padding: 36px 24px; }
+.eyebrow-title {
+  font-size: 14px;
   font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
-.section-title.light { color: var(--white); }
-.section-subtitle {
-  text-align: center;
-  color: var(--gray);
-  max-width: 520px;
-  margin: 0 auto 40px;
-}
-.section-subtitle.light { color: var(--gray-light); }
-
-/* Service cards */
-.cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-}
-.card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 30px 24px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  border-bottom: 5px solid var(--yellow);
-  transition: transform 0.2s ease;
-}
-.card:hover { transform: translateY(-4px); }
-.card-icon {
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 16px;
+.row-list { display: flex; flex-direction: column; }
+.row-item {
+  padding: 18px 0;
+  border-top: 2px solid var(--line);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.card-icon .icon { width: 32px; height: 32px; }
-.icon-yellow { background: var(--yellow); color: var(--black); }
-.icon-red { background: var(--red); color: var(--white); }
-.icon-black { background: var(--black); color: var(--white); }
-.card h3 { font-size: 1.15rem; }
-.card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 0; }
-
-/* Service area chips */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
+  flex-direction: column;
   gap: 6px;
-  background: var(--black);
-  color: var(--yellow);
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 2px solid var(--yellow);
 }
-.area-note {
-  max-width: 720px;
-  margin: 28px auto 0;
-  text-align: center;
-  color: var(--gray);
-  font-size: 0.95rem;
-}
-.area-note strong { color: var(--black); }
+.row-title { font-size: 22px; font-weight: 800; }
+.row-desc { font-size: 15px; line-height: 1.5; color: var(--gray-dark); }
 
-/* Features / Why us */
+.area-block {
+  padding: 32px 20px 40px;
+  border-top: 2px solid var(--ink);
+}
+.area-line {
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.area-note { color: var(--gray); font-size: 15px; margin-bottom: 0; }
+
+/* ============================================
+   TRUCK ILLUSTRATION (in the "Ne yapıyoruz" art panel)
+   ============================================ */
+.truck-figure { width: 220px; height: auto; }
+.truck-figure .truck-shadow { fill: rgba(32, 30, 29, 0.25); }
+.truck-figure .truck-arm { fill: var(--ink); }
+.truck-figure .truck-hook { fill: var(--red); }
+.truck-figure .truck-bed { fill: var(--white); stroke: var(--ink); stroke-width: 3; rx: 8px; }
+.truck-figure .truck-chassis { fill: var(--ink); rx: 8px; }
+.truck-figure .truck-bumper { fill: var(--ink); rx: 5px; }
+.truck-figure .truck-cab { fill: var(--red); stroke: var(--ink); stroke-width: 3; }
+.truck-figure .truck-window { fill: var(--white); }
+.truck-figure .wheel-tire { fill: var(--ink); stroke: var(--white); stroke-width: 2; }
+.truck-figure .wheel-hub { fill: var(--white); }
+.truck-figure .wheel-spoke { fill: var(--red); rx: 2px; }
+
+.truck-figure .truck-body { animation: truck-bounce 0.9s ease-in-out infinite; }
+.truck-figure .wheel { animation: wheel-spin 0.7s linear infinite; }
+@keyframes truck-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+@keyframes wheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================
+   SECTIONS (Neden Biz / S.S.S.)
+   ============================================ */
+.section { padding: 56px 0; background: var(--canvas); }
+.section-alt {
+  background: var(--paper);
+  margin: 0 16px 16px;
+  border-radius: var(--radius-xl);
+}
+
 .features {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
 }
-.feature { text-align: center; padding: 12px; }
-.feature-icon { margin-bottom: 10px; color: var(--red); }
-.feature-icon .icon { width: 36px; height: 36px; }
-.feature h3 { font-size: 1.05rem; }
-.feature p { color: var(--gray); font-size: 0.92rem; margin-bottom: 0; }
+.feature {
+  padding: 26px 22px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature h3 { font-size: 1.05rem; font-weight: 800; }
+.feature p { color: var(--gray-dark); font-size: 0.92rem; margin-bottom: 0; }
 
 /* FAQ / S.S.S. */
 .faq-list {
@@ -511,12 +414,12 @@ button:focus-visible {
   gap: 12px;
 }
 .faq-item {
-  background: var(--off-white);
-  border: 2px solid var(--gray-light);
-  border-radius: var(--radius);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
   padding: 4px 20px;
 }
-.faq-item[open] { border-color: var(--yellow); }
+.faq-item[open] { border-color: var(--red); }
 .faq-item summary {
   display: flex;
   align-items: center;
@@ -530,33 +433,44 @@ button:focus-visible {
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-chevron { color: var(--red); transition: transform 0.2s ease; }
 .faq-item[open] .faq-chevron { transform: rotate(180deg); }
-.faq-item p { color: var(--gray); padding-bottom: 16px; margin: 0; }
+.faq-item p { color: var(--gray-dark); padding-bottom: 16px; margin: 0; }
 
-/* Contact section */
+/* ============================================
+   İLETİŞİM (closing poster, bookends the hero)
+   ============================================ */
 .section-contact {
-  background: linear-gradient(160deg, var(--black) 0%, #2a2a2a 100%);
+  background: var(--red);
+  color: var(--white);
+  padding: 56px 0;
+  margin: 0 16px 16px;
+  border-radius: var(--radius-xl);
   text-align: center;
+}
+.closing-title {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 36px;
 }
 .contact-box {
   font-style: normal;
-  max-width: 560px;
+  max-width: 480px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid var(--yellow);
-  border-radius: var(--radius);
-  padding: 36px 24px;
+  border: 2px solid var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
 }
 .contact-phone {
   display: inline-block;
-  font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  color: var(--yellow);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
   margin-bottom: 6px;
 }
-.contact-note { color: var(--gray-light); font-size: 0.9rem; }
+.contact-note { opacity: 0.85; font-size: 0.9rem; }
+.contact-box .hero-cta { justify-content: center; }
 .contact-areas {
-  color: var(--gray-light);
+  opacity: 0.85;
   font-size: 0.85rem;
   margin-top: 18px;
   margin-bottom: 0;
@@ -566,13 +480,27 @@ button:focus-visible {
    FOOTER
    ============================================ */
 .footer {
-  background: var(--black);
-  color: var(--gray-light);
-  padding: 26px 0;
-  border-top: 4px solid var(--yellow);
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 4px solid var(--red);
 }
-.footer-inner { text-align: center; font-size: 0.85rem; }
-.footer-sub { margin-top: 4px; color: var(--gray); }
+.footer-inner {
+  padding: 28px 88px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.footer-phone { font-weight: 800; font-size: 1.1rem; }
+.footer-copy {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+  color: var(--gray);
+  text-align: center;
+}
 
 /* ============================================
    FLOATING BUTTONS
@@ -587,16 +515,17 @@ button:focus-visible {
   z-index: 400;
 }
 .fab {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--ink);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   transition: transform 0.15s ease;
 }
-.fab .icon { width: 26px; height: 26px; }
+.fab .icon { width: 24px; height: 24px; }
 .fab:hover { transform: scale(1.08); }
 .fab-call { background: var(--red); color: var(--white); }
 .fab-whatsapp { background: #25D366; color: var(--white); }
@@ -604,23 +533,27 @@ button:focus-visible {
 /* ============================================
    RESPONSIVE
    ============================================ */
-@media (min-width: 640px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 700px) {
   .features { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .split { flex-direction: row; align-items: stretch; }
+  .split-art { flex: 0 0 42%; min-height: auto; border-bottom: none; border-right: 2px solid var(--ink); }
+  .split-body { flex: 1; padding: 44px 40px; }
+  .truck-figure { width: 260px; }
 }
 
 @media (min-width: 900px) {
-  :root { --header-h: 148px; }
-  .nav-top { padding: 14px 24px; }
+  :root { --header-h: 68px; }
   .nav-links { display: flex; }
-  .nav-call { display: inline-flex; }
   .menu-toggle { display: none; }
-  .brand-name { font-size: 1.5rem; }
-  .truck-strip { height: 76px; }
-  .truck-figure { width: 170px; }
   .features { grid-template-columns: repeat(4, 1fr); }
-}
-
-@media (max-width: 899px) {
-  :root { --header-h: 168px; }
 }
