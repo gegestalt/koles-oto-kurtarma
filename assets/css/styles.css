@@ -311,6 +311,21 @@ button:focus-visible {
   justify-content: center;
 }
 .split-body { padding: 36px 24px; }
+
+/* Scroll-triggered slide-in (progressive enhancement — see script.js).
+   Only takes effect once JS confirms it can reveal the content again;
+   without JS, .split-art/.split-body stay at their normal visible state. */
+.js-reveal .split-art,
+.js-reveal .split-body {
+  transition: transform 0.7s cubic-bezier(0.16, 0.84, 0.44, 1), opacity 0.7s ease;
+}
+.js-reveal .split:not(.is-visible) .split-art { transform: translateX(-48px); opacity: 0; }
+.js-reveal .split:not(.is-visible) .split-body { transform: translateX(48px); opacity: 0; }
+.js-reveal .split.is-visible .split-art,
+.js-reveal .split.is-visible .split-body {
+  transform: translateX(0);
+  opacity: 1;
+}
 .eyebrow-title {
   font-size: 14px;
   font-weight: 800;

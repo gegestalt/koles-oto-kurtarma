@@ -54,4 +54,21 @@
       }
     });
   }
+
+  // Scroll-triggered slide-in for the "Ne yapıyoruz" split section.
+  // Progressive enhancement: content is visible by default (see CSS), and
+  // only hidden-then-revealed once JS confirms it can animate it back in.
+  var split = document.querySelector('.split');
+  if (split && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+    observer.observe(split);
+  }
 })();
