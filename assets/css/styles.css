@@ -91,7 +91,14 @@ button:focus-visible {
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-icon { font-size: 1.1em; }
+
+/* ===== Icon base (inline SVG via <use>, colored with currentColor) ===== */
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.2em;
+  flex-shrink: 0;
+}
 
 .btn-call {
   background: var(--red);
@@ -136,7 +143,18 @@ button:focus-visible {
   gap: 8px;
   flex-shrink: 0;
 }
-.brand-badge { font-size: 1.6rem; line-height: 1; }
+.brand-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  flex-shrink: 0;
+}
+.brand-badge .icon { width: 18px; height: 18px; vertical-align: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name {
   font-family: var(--font-heading);
@@ -205,33 +223,36 @@ button:focus-visible {
 .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* --- Towing truck animation strip: the navbar centerpiece --- */
-.truck-road {
+/* --- Tow truck illustration strip: the navbar centerpiece ---
+   The truck stays centered in place: wheels spin continuously and the
+   body bounces on its suspension, while the road markings scroll
+   beneath it to sell the sense of motion. */
+.truck-strip {
   position: relative;
-  height: 46px;
+  height: 88px;
   background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-.road-track {
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .road-dashes {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
   width: 200%;
-  height: 4px;
+  height: 5px;
   background-image: repeating-linear-gradient(
     90deg,
-    var(--yellow) 0 28px,
-    transparent 28px 56px
+    var(--yellow) 0 30px,
+    transparent 30px 60px
   );
-  animation: road-scroll 1.6s linear infinite;
+  animation: road-scroll 1.4s linear infinite;
 }
 @keyframes road-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-56px); }
+  to { transform: translateX(-60px); }
 }
 
 .road-caution {
@@ -247,39 +268,46 @@ button:focus-visible {
   );
 }
 
-.truck-wrap {
-  position: absolute;
-  top: 50%;
-  left: -15%;
-  transform: translateY(-58%);
-  display: flex;
-  align-items: center;
-  animation: truck-drive 7s linear infinite;
+.truck-figure {
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.45));
 }
-.truck-emoji {
-  font-size: 1.9rem;
-  display: inline-block;
-  animation: truck-bounce 0.5s ease-in-out infinite alternate;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
+.truck-figure .truck-shadow { fill: rgba(0, 0, 0, 0.35); }
+.truck-figure .truck-body { fill: none; }
+.truck-figure .truck-arm { fill: var(--black); }
+.truck-figure .truck-hook { fill: var(--red); }
+.truck-figure .truck-bed { fill: var(--yellow); stroke: var(--black); stroke-width: 4; }
+.truck-figure .truck-chassis { fill: var(--black); }
+.truck-figure .truck-bumper { fill: var(--black); }
+.truck-figure .truck-cab { fill: var(--red); stroke: var(--black); stroke-width: 4; }
+.truck-figure .truck-window { fill: var(--white); opacity: 0.92; }
+.truck-figure .truck-beacon { fill: var(--yellow); animation: beacon-flash 1s ease-in-out infinite; }
+.truck-figure .wheel-tire { fill: var(--black); stroke: var(--gray-light); stroke-width: 2; }
+.truck-figure .wheel-hub { fill: var(--gray-light); }
+.truck-figure .wheel-spoke { fill: var(--yellow); }
+
+.truck-figure .truck-body {
+  animation: truck-bounce 0.9s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
-.truck-smoke {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-left: -6px;
-  transform: scaleX(-1);
-  animation: smoke-puff 1s ease-in-out infinite;
-}
-@keyframes truck-drive {
-  0%   { left: -15%; }
-  100% { left: 115%; }
+.truck-figure .wheel {
+  animation: wheel-spin 0.7s linear infinite;
 }
 @keyframes truck-bounce {
-  from { transform: translateY(0) rotate(-1deg); }
-  to   { transform: translateY(-3px) rotate(1deg); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
 }
-@keyframes smoke-puff {
-  0%, 100% { opacity: 0.3; transform: scaleX(-1) translateY(0); }
-  50%      { opacity: 0.8; transform: scaleX(-1) translateY(-3px); }
+@keyframes wheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes beacon-flash {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
 }
 
 /* Mobile nav drawer */
@@ -381,6 +409,8 @@ button:focus-visible {
   font-size: 0.9rem;
   color: var(--gray-light);
 }
+.hero-badges li { display: flex; align-items: center; gap: 6px; }
+.hero-badges .icon { color: var(--yellow); }
 
 /* ============================================
    SECTIONS
@@ -425,11 +455,11 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 2rem;
 }
-.icon-yellow { background: var(--yellow); }
-.icon-red { background: var(--red); }
-.icon-black { background: var(--black); }
+.card-icon .icon { width: 32px; height: 32px; }
+.icon-yellow { background: var(--yellow); color: var(--black); }
+.icon-red { background: var(--red); color: var(--white); }
+.icon-black { background: var(--black); color: var(--white); }
 .card h3 { font-size: 1.15rem; }
 .card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 0; }
 
@@ -451,6 +481,14 @@ button:focus-visible {
   border-radius: 999px;
   border: 2px solid var(--yellow);
 }
+.area-note {
+  max-width: 720px;
+  margin: 28px auto 0;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+.area-note strong { color: var(--black); }
 
 /* Features / Why us */
 .features {
@@ -459,9 +497,40 @@ button:focus-visible {
   gap: 24px;
 }
 .feature { text-align: center; padding: 12px; }
-.feature-icon { font-size: 2.2rem; margin-bottom: 10px; }
+.feature-icon { margin-bottom: 10px; color: var(--red); }
+.feature-icon .icon { width: 36px; height: 36px; }
 .feature h3 { font-size: 1.05rem; }
 .feature p { color: var(--gray); font-size: 0.92rem; margin-bottom: 0; }
+
+/* FAQ / S.S.S. */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--off-white);
+  border: 2px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 4px 20px;
+}
+.faq-item[open] { border-color: var(--yellow); }
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-chevron { color: var(--red); transition: transform 0.2s ease; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+.faq-item p { color: var(--gray); padding-bottom: 16px; margin: 0; }
 
 /* Contact section */
 .section-contact {
@@ -469,6 +538,7 @@ button:focus-visible {
   text-align: center;
 }
 .contact-box {
+  font-style: normal;
   max-width: 560px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
@@ -523,10 +593,10 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   transition: transform 0.15s ease;
 }
+.fab .icon { width: 26px; height: 26px; }
 .fab:hover { transform: scale(1.08); }
 .fab-call { background: var(--red); color: var(--white); }
 .fab-whatsapp { background: #25D366; color: var(--white); }
@@ -540,16 +610,17 @@ button:focus-visible {
 }
 
 @media (min-width: 900px) {
-  :root { --header-h: 108px; }
+  :root { --header-h: 148px; }
   .nav-top { padding: 14px 24px; }
   .nav-links { display: flex; }
   .nav-call { display: inline-flex; }
   .menu-toggle { display: none; }
   .brand-name { font-size: 1.5rem; }
-  .truck-road { height: 40px; }
+  .truck-strip { height: 76px; }
+  .truck-figure { width: 170px; }
   .features { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 899px) {
-  :root { --header-h: 138px; }
+  :root { --header-h: 168px; }
 }
