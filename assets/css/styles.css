@@ -240,6 +240,8 @@ img { display: block; max-width: 100%; }
   background: var(--red);
   color: var(--white);
   border-radius: 28px;
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
   margin: clamp(12px, 1.6vw, 20px);
   overflow: hidden;
   display: grid;
