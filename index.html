@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://unpkg.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Caveat:wght@600&family=Bungee&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Caveat:wght@600&family=Bungee&family=Racing+Sans+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.min.js" defer></script>
 
@@ -156,22 +156,16 @@
   <!-- ===== HEADER ===== -->
   <header class="topbar">
     <div class="topbar-grid">
+      <a href="#hero" class="topbar-brand">
+        <span class="tow-lane" aria-hidden="true">
+          <img class="tow-drive" src="assets/img/tow-truck-icon.png" alt="" width="364" height="335" loading="eager">
+        </span>
+        <span class="brand-main">Koleş Oto Kurtarma 7/24 Çekici Hizmeti</span>
+      </a>
       <button type="button" id="menuToggle" class="menu-btn" aria-label="Menüyü aç" aria-expanded="false">
         <i data-lucide="menu" class="icon-menu-open"></i>
         <i data-lucide="x" class="icon-menu-close"></i>
       </button>
-      <a href="#hero" class="topbar-brand">
-        <span class="tow-lane" aria-hidden="true">
-          <svg class="tow-drive" viewBox="0 0 24 24" width="26" height="26">
-            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
-            <path d="M15 18H9"></path>
-            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
-            <g class="tow-wheel"><circle cx="17" cy="18" r="2"></circle><path d="M17 16.4v3.2"></path></g>
-            <g class="tow-wheel"><circle cx="7" cy="18" r="2"></circle><path d="M7 16.4v3.2"></path></g>
-          </svg>
-        </span>
-        <span class="topbar-brand-text">Koleş Oto Kurtarma 7/24 Çekici Hizmeti</span>
-      </a>
     </div>
   </header>
 
@@ -212,27 +206,27 @@
     <section id="hizmetler" class="section-divider">
       <h2 class="section-label">Hizmetler</h2>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="car-front" style="color:#e85e00;"></i>
           <h3>Araç Arızaları</h3>
         </div>
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="battery-charging" style="color:#1f7a4d;"></i>
           <h3>Akü Arızası &amp; Bitmesi</h3>
         </div>
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="disc-3" style="color:#2f5fa8;"></i>
           <h3>Lastik patladı</h3>
         </div>
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="triangle-alert" style="color:#a8761a;"></i>
           <h3>Kaza Sonucu Yardım</h3>
         </div>
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="mountain" style="color:#6b3fa0;"></i>
           <h3>Yoldan Çıkan Araç Kurtarma</h3>
         </div>
-        <div class="service-card">
+        <div class="service-card" onclick="">
           <i data-lucide="truck" style="color:#9c2f3f;"></i>
           <h3>Şehirler arası taşıma</h3>
         </div>
