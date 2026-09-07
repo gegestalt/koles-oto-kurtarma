@@ -20,9 +20,12 @@
   --line-soft: rgba(32, 30, 29, 0.4);
   --line-soft-2: rgba(243, 242, 242, 0.3);
   --white: #FFFFFF;
+  --yellow: #FFC800;
+  --topbar-bg: #383D43;
 
   --font: 'Archivo', system-ui, sans-serif;
   --font-script: 'Caveat', cursive;
+  --font-brand: 'Bungee', cursive;
   --header-h: 60px;
 }
 
@@ -109,7 +112,7 @@ img { display: block; max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 800;
-  background: var(--ink);
+  background: var(--topbar-bg);
   color: var(--paper);
   padding: 12px clamp(16px, 3vw, 28px);
 }
@@ -153,23 +156,30 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--paper);
-  white-space: nowrap;
+  color: var(--yellow);
+  background: var(--ink);
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+  padding: 6px 16px;
+  max-width: 100%;
 }
 .topbar-brand-text {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: clamp(16px, 1.8vw, 21px);
-  letter-spacing: 0.04em;
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: clamp(11px, 1.7vw, 16px);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: var(--yellow);
+  white-space: normal;
 }
 
-.tow-lane { display: inline-flex; align-items: center; width: 44px; height: 26px; flex: none; }
+.tow-lane { display: inline-flex; align-items: center; width: 44px; height: 26px; flex: none; overflow: hidden; }
 .tow-drive {
   width: 26px;
   height: 26px;
   display: block;
   fill: none;
-  stroke: var(--red);
+  stroke: var(--yellow);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
