@@ -1,16 +1,16 @@
 /* ============================================
    Koleş Oto Kurtarma — Stil Dosyası
    "Modernist v2" tasarımı: mürekkep siyahı başlık/altbilgi,
-   kırmızı vurgu (#E0281E), Lucide ikonlar, Archivo + Caveat
+   turuncu-kırmızı vurgu (#EC3013), Lucide ikonlar, Archivo + Caveat
    tipografisi, sıfır köşe yuvarlama (kart ızgaraları) + yuvarlak
    kartlar (hero/butonlar).
    ============================================ */
 
 :root {
-  --red: #E0281E;
-  --red-600: #C41F16;
-  --red-700: #A5140C;
-  --red-img-bg: #C8221A;
+  --red: #EC3013;
+  --red-600: #DD2B0F;
+  --red-700: #AE1800;
+  --red-img-bg: #AE1800;
   --ink: #201E1D;
   --paper: #F3F2F2;
   --surface: #EAE9E9;
@@ -111,7 +111,7 @@ img { display: block; max-width: 100%; }
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 500;
+  z-index: 800;
   background: var(--ink);
   color: var(--paper);
   padding: 12px clamp(16px, 3vw, 28px);
@@ -125,6 +125,7 @@ img { display: block; max-width: 100%; }
 .menu-btn {
   grid-column: 1;
   justify-self: start;
+  position: relative;
   width: 44px;
   height: 44px;
   display: flex;
@@ -134,12 +135,20 @@ img { display: block; max-width: 100%; }
   border: 2px solid rgba(243, 242, 242, 0.35);
   color: var(--paper);
   cursor: pointer;
+  transition: border-color 0.2s ease;
 }
 .menu-btn:hover { border-color: var(--red); }
-.menu-btn i { width: 22px; height: 22px; color: var(--paper); }
-.icon-menu-close { display: none; }
-.menu-btn[aria-expanded="true"] .icon-menu-open { display: none; }
-.menu-btn[aria-expanded="true"] .icon-menu-close { display: block; }
+.menu-btn i {
+  width: 22px;
+  height: 22px;
+  color: var(--paper);
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.icon-menu-open { opacity: 1; transform: rotate(0deg); }
+.icon-menu-close { opacity: 0; transform: rotate(-90deg); }
+.menu-btn[aria-expanded="true"] .icon-menu-open { opacity: 0; transform: rotate(90deg); }
+.menu-btn[aria-expanded="true"] .icon-menu-close { opacity: 1; transform: rotate(0deg); }
 
 .topbar-brand {
   grid-column: 2;
@@ -170,19 +179,39 @@ img { display: block; max-width: 100%; }
 @keyframes tow-bob { 0%, 100% { translate: 0 0; rotate: -1.5deg; } 50% { translate: 0 -2px; rotate: 1.5deg; } }
 @keyframes tow-roll { to { rotate: 360deg; } }
 
-.topbar-nav {
+/* Off-canvas nav: slides in from the left edge of the screen. */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(78vw, 300px);
+  z-index: 700;
+  background: var(--ink);
+  box-shadow: 2px 0 0 var(--red);
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-top: 12px;
-  padding-top: 12px;
-  box-shadow: 0 -2px 0 rgba(243, 242, 242, 0.25);
+  padding: 84px 22px 24px;
+  transform: translateX(-100%);
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.topbar-nav[hidden] { display: none; }
-.topbar-nav a { color: var(--paper); font-size: 17px; font-weight: 700; padding: 12px 4px; }
-.topbar-nav a:hover { color: var(--red); }
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav a { color: var(--paper); font-size: 17px; font-weight: 700; padding: 12px 4px; }
+.mobile-nav a:hover { color: var(--red); }
 .topbar-nav-call { justify-content: flex-start; margin-top: 8px; padding: 14px 18px; font-size: 19px; }
 .topbar-nav-call i { color: var(--white); }
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 650;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s ease;
+}
+.nav-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ============================================
    HERO
@@ -203,12 +232,15 @@ img { display: block; max-width: 100%; }
 .hero h1 { font-size: clamp(32px, 4.4vw, 54px); line-height: 1; letter-spacing: -0.03em; }
 .hero-lede { font-size: clamp(19px, 1.9vw, 21px); font-weight: 700; line-height: 1.4; max-width: 40ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; }
+.hero-actions .btn { flex: 1 1 0; min-width: 0; }
 .hero-quote {
   font-family: var(--font-script);
-  font-size: clamp(28px, 3.4vw, 42px);
+  font-size: clamp(26px, 3.4vw, 42px);
   line-height: 1.15;
   color: var(--white);
   max-width: 24ch;
+  text-align: center;
+  align-self: center;
 }
 .hero-media { border-radius: 18px; overflow: hidden; background: var(--red-img-bg); }
 .hero-media img { aspect-ratio: 5 / 4; object-fit: cover; object-position: 50% 100%; width: 100%; height: 100%; }
@@ -346,4 +378,12 @@ img { display: block; max-width: 100%; }
 }
 @media (min-width: 641px) and (max-width: 899px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Keep the call + WhatsApp buttons side by side on narrow phones
+   instead of stacking, by shrinking them to fit the row. */
+@media (max-width: 480px) {
+  .btn { padding: 12px 14px; font-size: 15px; gap: 8px; }
+  .btn i, .btn svg, .btn-icon-wa { width: 18px; height: 18px; }
+  .btn-light .btn-number { font-size: 17px; white-space: normal; }
 }
