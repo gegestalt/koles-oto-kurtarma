@@ -1,16 +1,16 @@
 /* ============================================
    Koleş Oto Kurtarma — Stil Dosyası
    "Modernist v2" tasarımı: mürekkep siyahı başlık/altbilgi,
-   turuncu-kırmızı vurgu (#EC3013), Lucide ikonlar, Archivo + Caveat
+   parlak turuncu vurgu (#FF6A00), Lucide ikonlar, Archivo + Caveat
    tipografisi, sıfır köşe yuvarlama (kart ızgaraları) + yuvarlak
    kartlar (hero/butonlar).
    ============================================ */
 
 :root {
-  --red: #EC3013;
-  --red-600: #DD2B0F;
-  --red-700: #AE1800;
-  --red-img-bg: #AE1800;
+  --red: #FF6A00;
+  --red-600: #E85E00;
+  --red-700: #C24E00;
+  --red-img-bg: #C24E00;
   --ink: #201E1D;
   --paper: #F3F2F2;
   --surface: #EAE9E9;
