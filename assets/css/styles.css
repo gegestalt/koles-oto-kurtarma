@@ -282,8 +282,9 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 -2px 0 var(--ink), -2px 0 0 var(--line-soft);
   padding: clamp(22px, 2.6vw, 30px) clamp(16px, 3vw, 28px);
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
   background: var(--paper);
   transition: transform 220ms ease, box-shadow 220ms ease;
   will-change: transform;
@@ -295,7 +296,7 @@ img { display: block; max-width: 100%; }
   z-index: 1;
   position: relative;
 }
-.service-card svg { width: 28px; height: 28px; stroke-width: 2; }
+.service-card svg { width: 28px; height: 28px; stroke-width: 2; flex: none; }
 .service-card h3 { font-size: clamp(21px, 2.2vw, 25px); }
 
 /* ============================================
