@@ -9,15 +9,40 @@ Koleş Oto Kurtarma için mobil uyumlu, tek sayfalık tanıtım sitesi.
 
 ## Teknik
 
-Derleme aracı gerektirmeyen düz HTML/CSS/JS. Dosya yapısı:
+Düz HTML/CSS/JS. İkonlar sayfaya gömülü SVG (üçüncü parti JS yok),
+görseller WebP (`assets/img/gallery/*-640.webp`, `*-1000.webp`) olarak sunulur.
+Dosya yapısı:
 
 ```
-index.html
+index.html                  ← ana sayfa
+{bölge}-cekici.html         ← bölge landing sayfaları (üretilen)
+{hizmet}.html               ← hizmet landing sayfaları (üretilen)
 assets/css/styles.css
 assets/js/script.js
 robots.txt
-sitemap.xml
+sitemap.xml                 ← üretilen (build script yazar)
+vercel.json                 ← cleanUrls + statik önbellek başlıkları
+tools/build-pages.mjs       ← bölge & hizmet sayfası üreticisi
 ```
+
+## Bölge & hizmet sayfaları üretimi
+
+Bölge (ör. `Seferihisar Çekici`) ve hizmet (ör. `Akü Takviyesi`) sayfaları
+`tools/build-pages.mjs` içindeki verilerden üretilir. Yeni bir bölge/hizmet
+eklemek veya metin güncellemek için o dosyadaki `LOCATIONS` / `SERVICES`
+dizilerini düzenleyip şunu çalıştırın:
+
+```
+node tools/build-pages.mjs
+```
+
+Bu komut ilgili `.html` sayfalarını kök dizine yazar ve `sitemap.xml`'i günceller.
+Her sayfa benzersiz `title`/`description`/`canonical`, breadcrumb + `Service`
++ `FAQPage` JSON-LD şeması içerir. `cleanUrls` sayesinde adresler `.html`
+uzantısız çalışır (ör. `/urla-cekici`).
+
+Görselleri yeniden üretmek için (kaynak JPG değişirse) `sharp` ile 640/1000
+genişliğinde WebP üretilir; ayrıntı için commit geçmişine bakın.
 
 ## Yerel önizleme
 
