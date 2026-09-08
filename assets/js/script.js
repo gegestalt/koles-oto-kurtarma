@@ -45,15 +45,4 @@
       }
     });
   }
-
-  var iconRetries = 0;
-  function renderIcons() {
-    if (window.lucide) {
-      window.lucide.createIcons();
-    } else if (iconRetries < 50) {
-      iconRetries += 1;
-      setTimeout(renderIcons, 100);
-    }
-  }
-  renderIcons();
 })();

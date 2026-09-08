@@ -296,6 +296,7 @@ img { display: block; max-width: 100%; }
   z-index: 1;
   position: relative;
 }
+a.service-card, a.service-card:hover { color: var(--ink); }
 .service-card svg { width: 28px; height: 28px; stroke-width: 2; flex: none; }
 .service-card h3 { font-size: clamp(21px, 2.2vw, 25px); }
 
@@ -369,6 +370,23 @@ img { display: block; max-width: 100%; }
    FOOTER
    ============================================ */
 .footer { background: var(--ink); color: var(--paper); }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px clamp(16px, 3vw, 28px);
+}
+.footer-heading {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+.footer-links ul { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { color: var(--paper); font-size: 15px; font-weight: 500; }
+.footer-links a:hover { color: var(--red); }
 .footer-areas {
   padding: 26px clamp(16px, 3vw, 28px);
   display: flex;
@@ -390,6 +408,37 @@ img { display: block; max-width: 100%; }
   line-height: 1.6;
 }
 .footer-bottom .muted { color: var(--muted); }
+
+/* ============================================
+   İÇERİK SAYFALARI (bölge & hizmet landing pages)
+   ============================================ */
+.prose { padding: clamp(26px, 3.4vw, 44px) clamp(16px, 3vw, 28px); }
+.prose-inner { max-width: 74ch; }
+.prose h2 { font-size: clamp(22px, 2.6vw, 30px); margin: 4px 0 14px; }
+.prose h3 { font-size: 19px; margin: 22px 0 8px; }
+.prose p { font-size: 16px; line-height: 1.72; color: var(--gray-dark); margin-bottom: 14px; }
+.prose ul.ticks { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 14px; }
+.prose ul.ticks li { font-size: 16px; line-height: 1.5; padding-left: 26px; position: relative; }
+.prose ul.ticks li::before { content: "›"; position: absolute; left: 6px; color: var(--red); font-weight: 800; }
+.breadcrumb { padding: 14px clamp(16px, 3vw, 28px); font-size: 13px; font-weight: 700; color: var(--gray); }
+.breadcrumb a { color: var(--gray-dark); }
+.breadcrumb a:hover { color: var(--red-600); }
+.region-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 clamp(16px, 3vw, 28px) clamp(26px, 3.4vw, 44px);
+}
+.region-links a {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.region-links a:hover { background: var(--ink); color: var(--paper); }
 
 /* ============================================
    RESPONSIVE
