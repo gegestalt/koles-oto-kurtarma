@@ -462,3 +462,44 @@ a.service-card, a.service-card:hover { color: var(--ink); }
   .btn i, .btn svg, .btn-icon-wa { width: 18px; height: 18px; }
   .btn-light .btn-number { font-size: 17px; white-space: normal; }
 }
+
+/* ============================================
+   STICKY MOBİL ARAMA ÇUBUĞU
+   Yolda kalan kullanıcı için her ekranda tek dokunuşla arama/WhatsApp.
+   Sadece mobilde görünür.
+   ============================================ */
+.call-bar { display: none; }
+@media (max-width: 760px) {
+  .call-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    display: flex;
+    gap: 8px;
+    background: var(--ink);
+    box-shadow: 0 -2px 0 var(--red);
+    padding: 8px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  .call-bar-btn {
+    flex: 1 1 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 16px;
+    padding: 14px 10px;
+    border-radius: 12px;
+  }
+  .call-bar-btn svg { width: 20px; height: 20px; flex: none; }
+  .call-bar-call { background: var(--red); color: var(--white); }
+  .call-bar-call:hover { color: var(--white); }
+  .call-bar-wa { background: #25D366; color: var(--ink); }
+  .call-bar-wa:hover { color: var(--ink); }
+  /* Sabit çubuğun altbilgiyi örtmemesi için gövdeye boşluk. */
+  body { padding-bottom: 78px; }
+}

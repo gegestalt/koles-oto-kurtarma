@@ -25,21 +25,26 @@ vercel.json                 ← cleanUrls + statik önbellek başlıkları
 tools/build-pages.mjs       ← bölge & hizmet sayfası üreticisi
 ```
 
-## Bölge & hizmet sayfaları üretimi
+## Bölge, hizmet & rehber sayfaları üretimi
 
-Bölge (ör. `Seferihisar Çekici`) ve hizmet (ör. `Akü Takviyesi`) sayfaları
-`tools/build-pages.mjs` içindeki verilerden üretilir. Yeni bir bölge/hizmet
-eklemek veya metin güncellemek için o dosyadaki `LOCATIONS` / `SERVICES`
-dizilerini düzenleyip şunu çalıştırın:
+Bölge (ör. `Seferihisar Çekici`), hizmet (ör. `Akü Takviyesi`) ve rehber
+(ör. `Yolda kalınca ne yapmalı?`) sayfaları `tools/build-pages.mjs` içindeki
+verilerden üretilir. Yeni bir sayfa eklemek veya metin güncellemek için o
+dosyadaki `LOCATIONS` / `SERVICES` / `BLOG` dizilerini düzenleyip şunu
+çalıştırın:
 
 ```
 node tools/build-pages.mjs
 ```
 
-Bu komut ilgili `.html` sayfalarını kök dizine yazar ve `sitemap.xml`'i günceller.
-Her sayfa benzersiz `title`/`description`/`canonical`, breadcrumb + `Service`
-+ `FAQPage` JSON-LD şeması içerir. `cleanUrls` sayesinde adresler `.html`
-uzantısız çalışır (ör. `/urla-cekici`).
+Bu komut ilgili `.html` sayfalarını (ayrıca `404.html`) kök dizine yazar ve
+`sitemap.xml`'i günceller. Her sayfa benzersiz `title`/`description`/`canonical`,
+breadcrumb + `Service`/`Article` + `FAQPage` JSON-LD şeması içerir. `cleanUrls`
+sayesinde adresler `.html` uzantısız çalışır (ör. `/urla-cekici`).
+
+Tüm sayfalarda mobilde sabit "Hemen Ara / WhatsApp" çubuğu bulunur ve her
+arama/WhatsApp tıklaması Vercel Analytics'e özel olay (`call_click` /
+`whatsapp_click`) olarak gönderilir.
 
 Görselleri yeniden üretmek için (kaynak JPG değişirse) `sharp` ile 640/1000
 genişliğinde WebP üretilir; ayrıntı için commit geçmişine bakın.

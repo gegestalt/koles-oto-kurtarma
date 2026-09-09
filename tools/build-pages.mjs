@@ -116,6 +116,111 @@ const LOCATIONS = [
       ['İzmir merkeze araç taşıyor musunuz?', 'Evet, Narlıdere\'den İzmir merkez ve diğer ilçelere taşıma yapıyoruz.'],
     ],
   },
+  {
+    slug: 'menderes-cekici', town: 'Menderes', lat: 38.2517, lng: 27.1339,
+    title: 'Menderes Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Menderes'te 7/24 oto çekici ve yol yardım. Cumaovası, Görece, Oğlananası ve havalimanı çevresinde akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Menderes ve çevresinde 7/24 acil çekici; havalimanı ve otoyol hattına hızlı ulaşım.",
+    paras: [
+      "Menderes merkez, Cumaovası, Görece, Oğlananası ve Gümüldür yolu çevresinde oto çekici hizmeti veriyoruz. Adnan Menderes Havalimanı ve İzmir–Aydın otoyoluna yakınlığımız sayesinde bu yoğun güzergâhlardaki arızalara hızlı müdahale ediyoruz.",
+      "İster havalimanı çevresinde ister köy yollarında kalın, binek ve ticari aracınızı hasarsız taşıyoruz. Akü, lastik, kaza ve şehirler arası taşıma dâhil tüm hizmetleri tek numarayla sunuyoruz.",
+    ],
+    hoods: ['Menderes Merkez', 'Cumaovası', 'Görece', 'Oğlananası', 'Değirmendere', 'Gölcükler'],
+    faq: [
+      ['Havalimanı çevresine çekici geliyor mu?', 'Evet, Adnan Menderes Havalimanı ve çevre yollarına hizmet veriyoruz.'],
+      ['Otoyolda arıza yaptım, gelir misiniz?', 'Evet, İzmir–Aydın otoyolunun Menderes kesimine geliyoruz.'],
+    ],
+  },
+  {
+    slug: 'gaziemir-cekici', town: 'Gaziemir', lat: 38.3187, lng: 27.1210,
+    title: 'Gaziemir Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Gaziemir'de 7/24 oto çekici ve yol yardım. Sarnıç, Atıfbey ve Optimum çevresinde akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Gaziemir ve çevresinde 7/24 acil çekici, şehir içi hızlı yol yardım.",
+    paras: [
+      "Gaziemir merkez, Sarnıç, Atıfbey, Irmak ve Emrez mahallelerinde oto çekici hizmeti veriyoruz. Optimum ve çevresindeki yoğun trafikte, sanayi ve otoyol bağlantılarında yolda kalan araçlara hızla ulaşıyoruz.",
+      "Şehir içi kısa mesafeden şehirler arası taşımaya kadar her ihtiyaçta yanınızdayız. Akü takviyesi, lastik değişimi ve hasarlı araç kurtarma tek çağrı uzağınızda.",
+    ],
+    hoods: ['Gaziemir Merkez', 'Sarnıç', 'Atıfbey', 'Irmak', 'Emrez', 'Aktepe'],
+    faq: [
+      ['Gaziemir sanayi bölgesine geliyor musunuz?', 'Evet, sanayi ve iş yeri çevresi hizmet alanımızdadır.'],
+      ['Gece de çekici var mı?', 'Evet, 7/24 hizmet veriyoruz.'],
+    ],
+  },
+  {
+    slug: 'balcova-cekici', town: 'Balçova', lat: 38.3900, lng: 27.0500,
+    title: 'Balçova Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Balçova'da 7/24 oto çekici ve yol yardım. Teleferik, Çetin Emeç ve termal çevresinde akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Balçova ve çevresinde 7/24 acil çekici, İzmir merkeze yakın hızlı müdahale.",
+    paras: [
+      "Balçova merkez, Teleferik, Çetin Emeç, Onur ve Korutürk mahallelerinde oto çekici hizmeti veriyoruz. Termal ve teleferik çevresinin eğimli yollarında araç kurtarma tecrübemizle aracınızı güvenle taşıyoruz.",
+      "İzmir şehir merkezine yakınlığımız sayesinde hem şehir içi hem sahil yolu arızalarına kısa sürede ulaşıyoruz. Akü, lastik, kaza ve uzun mesafe taşıma dâhil tüm hizmetler tek numarada.",
+    ],
+    hoods: ['Balçova Merkez', 'Teleferik', 'Çetin Emeç', 'Onur', 'Korutürk', 'Eğitim'],
+    faq: [
+      ['Teleferik çevresinin eğimli yollarına gelir misiniz?', 'Evet, eğimli ve dar yollarda uygun ekipmanla çalışıyoruz.'],
+      ['Balçova\'dan İzmir merkeze taşıma yapıyor musunuz?', 'Evet, merkez ve tüm ilçelere taşıma yapıyoruz.'],
+    ],
+  },
+  {
+    slug: 'alacati-cekici', town: 'Alaçatı', lat: 38.2833, lng: 26.3750,
+    title: 'Alaçatı Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Alaçatı'da 7/24 oto çekici ve yol yardım. Taş sokaklar, plajlar ve otoyol çevresinde akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Alaçatı ve plaj yollarında 7/24 acil çekici; yaz sezonunda bile hızlı ulaşım.",
+    paras: [
+      "Alaçatı merkez, taş sokaklar, Port Alaçatı, Çark ve Delikli Koy plaj yolları çevresinde oto çekici hizmeti veriyoruz. Yaz aylarının yoğun trafiğinde ve dar sokaklarında araç çıkarma konusunda tecrübeliyiz.",
+      "Tatilde yolda kaldıysanız, akünüz bittiyse ya da lastiğiniz patladıysa panik yapmayın; tek numarayla yardım gönderiyoruz. Aracınızı istediğiniz servise veya konaklama adresinize güvenle ulaştırıyoruz.",
+    ],
+    hoods: ['Alaçatı Merkez', 'Port Alaçatı', 'Çark Plajı', 'Yeni Mecidiye', 'Hacımemiş', 'Tokmak'],
+    faq: [
+      ['Alaçatı taş sokaklarına çekici girer mi?', 'Evet, dar sokaklarda uygun ekipmanla aracınızı güvenle çıkarıyoruz.'],
+      ['Plaj yolunda kaldım, gelir misiniz?', 'Evet, tüm plaj yolları ve çevresi hizmet alanımızdadır.'],
+    ],
+  },
+  {
+    slug: 'sigacik-cekici', town: 'Sığacık', lat: 38.1972, lng: 26.7889,
+    title: 'Sığacık Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Sığacık ve Teos çevresinde 7/24 oto çekici. Marina, kale içi ve sahil yollarında akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Sığacık, marina ve Teos çevresinde 7/24 acil çekici.",
+    paras: [
+      "Sığacık merkez, marina, kale içi ve Teos antik kenti çevresinde oto çekici hizmeti veriyoruz. Dar ve tarihi sokaklarla sahil yollarında araç kurtarma tecrübemizle aracınızı hasarsız taşıyoruz.",
+      "Marina ve kamp alanları çevresinde yolda kalan araçlara hızlıca ulaşıyoruz. Arıza, akü, lastik veya kaza — hangi durumda olursanız olun tek çağrıyla ekibimiz yola çıkıyor.",
+    ],
+    hoods: ['Sığacık Merkez', 'Marina', 'Teos', 'Akkum', 'Cumhuriyet', 'Mersin Alanı'],
+    faq: [
+      ['Sığacık marinaya çekici gelir mi?', 'Evet, marina ve kale içi çevresi hizmet alanımızdadır.'],
+      ['Kamp alanına yardım gönderiyor musunuz?', 'Evet, Akkum ve çevre kamp alanlarına ulaşıyoruz.'],
+    ],
+  },
+  {
+    slug: 'gumuldur-cekici', town: 'Gümüldür', lat: 38.0731, lng: 27.0344,
+    title: 'Gümüldür Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Gümüldür ve Özdere yolu çevresinde 7/24 oto çekici. Sahil bandında akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Gümüldür ve sahil hattında 7/24 acil çekici ve yol yardım.",
+    paras: [
+      "Gümüldür merkez, Cumhuriyet, Atatürk ve Özdere yolu çevresinde oto çekici hizmeti veriyoruz. Yoğun sahil trafiğinde ve tatil sezonunda yolda kalan araçlara hızlı müdahale ediyoruz.",
+      "Sahil boyunca park hâlindeki araçlardan, ana yolda arıza yapan araçlara kadar her durumda yanınızdayız. Akü, lastik, kaza ve şehirler arası taşıma tek numarada.",
+    ],
+    hoods: ['Gümüldür Merkez', 'Cumhuriyet', 'Atatürk', 'Kensfaresi', 'Şaşal yolu'],
+    faq: [
+      ['Gümüldür sahiline ne kadar sürede gelirsiniz?', 'Konumunuza göre değişir; aradığınızda tahmini süreyi bildiriyoruz.'],
+      ['Tatil sezonunda da hizmet var mı?', 'Evet, yaz dâhil 7/24 kesintisiz çalışıyoruz.'],
+    ],
+  },
+  {
+    slug: 'ozdere-cekici', town: 'Özdere', lat: 38.0500, lng: 27.1167,
+    title: 'Özdere Çekici · 7/24 Oto Kurtarma | Koleş Oto Kurtarma',
+    desc: "Özdere'de 7/24 oto çekici ve yol yardım. Cumhuriyet, Çukuraltı ve sahil otelleri çevresinde akü, lastik ve kaza kurtarma. " + TEL_TXT,
+    lede: "Özdere ve sahil otelleri çevresinde 7/24 acil çekici.",
+    paras: [
+      "Özdere merkez, Cumhuriyet, Çukuraltı ve sahil otelleri çevresinde oto çekici hizmeti veriyoruz. Tatil bölgesinin yoğun sezon trafiğinde araçlarınıza zamanında ulaşıyoruz.",
+      "Otel ve site çevresinde yolda kalan, aküsü biten veya lastiği patlayan araçlara hızlı yardım gönderiyoruz. Aracınızı istediğiniz servise veya adrese güvenle taşıyoruz.",
+    ],
+    hoods: ['Özdere Merkez', 'Cumhuriyet', 'Çukuraltı', 'Gümüşsu', 'Sahil siteleri'],
+    faq: [
+      ['Otel önüne çekici gelir mi?', 'Evet, otel ve site çevresi hizmet alanımızdadır.'],
+      ['Aracımı İzmir\'e taşır mısınız?', 'Evet, Özdere\'den İzmir ve diğer şehirlere taşıma yapıyoruz.'],
+    ],
+  },
 ];
 
 const SERVICES = [
@@ -181,9 +286,112 @@ const SERVICES = [
   },
 ];
 
+// Bilgilendirici rehber yazıları (üst-huni SEO: kişi henüz "çekici"
+// aramadan önce bu soruları arar). Article + FAQPage şeması ile üretilir.
+const BLOG = [
+  {
+    slug: 'yolda-kalinca-ne-yapmali', navLabel: 'Yolda kalınca ne yapmalı?',
+    name: 'Yolda Kalınca Ne Yapmalı?',
+    title: 'Yolda Kalınca Ne Yapmalı? 7 Adımlık Güvenlik Rehberi | Koleş Oto Kurtarma',
+    desc: 'Aracınız yolda kaldığında güvenliğiniz için atmanız gereken adımlar: dörtlüler, reflektör, güvenli bekleme ve çekici çağırma.',
+    date: '2026-09-09',
+    lede: 'Aracınız yolda kaldıysa önce güvenlik. İşte sırasıyla yapmanız gerekenler.',
+    paras: [
+      'Yolda kalmak stresli olsa da doğru adımlarla hem kendinizi hem trafiği güvende tutabilirsiniz. Öncelik her zaman can güvenliğidir; araç ikinci plandadır.',
+      'Aşağıdaki adımları uyguladıktan sonra bulunduğunuz konumu net biçimde belirtip bir oto kurtarma ekibini arayın. Konumunuzu paylaşmak, ekibin size en kısa sürede ulaşmasını sağlar.',
+    ],
+    points: [
+      'Aracı mümkünse emniyet şeridine veya yol dışına alın.',
+      'Dörtlü (flaşör) sinyalleri hemen yakın.',
+      'Reflektörlü yeleği giyip aracı arkadan uygun mesafede reflektörle işaretleyin.',
+      'Yolcuları bariyerin dışına, güvenli tarafa alın.',
+      'Otoyolda aracın içinde veya önünde beklemeyin; bariyer arkasında bekleyin.',
+      'Konumunuzu (yön, km, çıkış, belirgin bir işaret) not edin.',
+      'Oto kurtarma ekibini arayın ve konumu net iletin.',
+    ],
+    faq: [
+      ['Otoyolda aracın içinde bekleyebilir miyim?', 'Hayır. Otoyolda aracın içinde veya yakınında beklemek tehlikelidir; bariyerin dışına geçip güvenli mesafede bekleyin.'],
+      ['Çekiciyi ararken ne söylemeliyim?', 'Konumunuzu (yön, en yakın çıkış/km, belirgin işaret), aracın durumunu ve arıza türünü söyleyin.'],
+    ],
+  },
+  {
+    slug: 'aku-bitince-ne-yapmali', navLabel: 'Akü bitince ne yapmalı?',
+    name: 'Akü Bitince Ne Yapmalı?',
+    title: 'Akü Bitince Ne Yapmalı? Takviye ve Çözüm Rehberi | Koleş Oto Kurtarma',
+    desc: 'Aküsü biten araç nasıl çalıştırılır? Takviye kablosuyla çalıştırma adımları, dikkat edilmesi gerekenler ve ne zaman çekici gerekir.',
+    date: '2026-09-09',
+    lede: 'Marş basmıyor, ışıklar sönük mü? Muhtemelen akünüz bitti. İşte yapılacaklar.',
+    paras: [
+      'Akü bitmesi, özellikle soğuk havada ve uzun süre çalışmayan araçlarda sık görülür. Belirtiler: marşın zayıf dönmesi ya da hiç dönmemesi, gösterge ışıklarının sönük olması ve merkezi kilidin çalışmaması.',
+      'Takviye (jump start) çoğu zaman sorunu çözer. Kabloları yanlış bağlamak araca zarar verebileceği için emin değilseniz bir ekip çağırmak en güvenlisidir; biz yerinde takviye yapıyoruz.',
+    ],
+    points: [
+      'Her iki aracı da kontak kapalı konuma alın.',
+      'Kırmızı kabloyu bitmiş akünün (+) ve takviye aracının (+) ucuna bağlayın.',
+      'Siyah kabloyu takviye aracının (–) ucuna, diğer ucu bitmiş araçta metal bir şaseye bağlayın.',
+      'Takviye aracını çalıştırın, birkaç dakika bekleyin.',
+      'Aracınızı çalıştırın; çalışınca kabloları ters sırayla sökün.',
+      'Çalışmıyorsa akü ömrünü tamamlamış olabilir; zorlamayın, ekip çağırın.',
+    ],
+    faq: [
+      ['Takviye yapınca araç yine çalışmazsa?', 'Akü ömrünü tamamlamış olabilir. Bu durumda yerinde değerlendirir, gerekiyorsa aracı en yakın uygun noktaya taşırız.'],
+      ['Yerinde akü takviyesi yapıyor musunuz?', 'Evet, bulunduğunuz yere gelip yerinde marş yardımı / takviye yapıyoruz.'],
+    ],
+  },
+  {
+    slug: 'kaza-sonrasi-yapilmasi-gerekenler', navLabel: 'Kaza sonrası yapılacaklar',
+    name: 'Kaza Sonrası Yapılması Gerekenler',
+    title: 'Kaza Sonrası Yapılması Gerekenler | Koleş Oto Kurtarma',
+    desc: 'Trafik kazası sonrası güvenlik, tutanak, fotoğraf ve hasarlı aracın kurtarılması için adım adım rehber.',
+    date: '2026-09-09',
+    lede: 'Kaza sonrası sakin kalın ve sırayla ilerleyin. İşte yapılması gerekenler.',
+    paras: [
+      'Kaza anında ilk öncelik güvenlik ve sağlıktır. Yaralı varsa 112, güvenlik için 155 aranmalıdır. Maddi hasarlı kazalarda taraflar anlaşırsa tutanak birlikte tutulabilir.',
+      'Hasarlı ve hareket edemeyen araçlar trafiği ve güvenliği tehlikeye atar. Belgeler ve fotoğraflar tamamlandıktan sonra aracın güvenle kurtarılması gerekir; bu aşamada oto kurtarma devreye girer.',
+    ],
+    points: [
+      'Dörtlüleri yakın, güvenliğinizi alın; yaralı varsa 112\'yi arayın.',
+      'Aracı ve hasarı farklı açılardan fotoğraflayın.',
+      'Karşı tarafın plaka, sigorta ve iletişim bilgilerini alın.',
+      'Kaza tespit tutanağını eksiksiz doldurun.',
+      'Hasarlı araç hareket edemiyorsa oto kurtarma çağırın.',
+      'Aracı anlaştığınız servise veya otoparka taşıtın.',
+    ],
+    faq: [
+      ['Hasarlı aracı kim taşır?', 'Hareket edemeyen aracı oto kurtarma ekibi güvenle kurtarıp istediğiniz adrese taşır.'],
+      ['Kaza yerine ne kadar sürede gelirsiniz?', 'Konuma göre değişir; aradığınızda tahmini süreyi hemen bildiririz.'],
+    ],
+  },
+  {
+    slug: 'cekici-cagirirken-dikkat', navLabel: 'Çekici çağırırken dikkat',
+    name: 'Çekici Çağırırken Dikkat Edilmesi Gerekenler',
+    title: 'Çekici Çağırırken Dikkat Edilmesi Gerekenler | Koleş Oto Kurtarma',
+    desc: 'Doğru çekiciyi seçmek için: konum bildirme, fiyat, araç tipine uygun ekipman ve güvenli taşıma hakkında bilinmesi gerekenler.',
+    date: '2026-09-09',
+    lede: 'Doğru çekiciyi seçmek zaman ve para kazandırır. Şunlara dikkat edin.',
+    paras: [
+      'Her aracın taşınma şekli aynı değildir. Özellikle otomatik vitesli, dört çekerli veya düşük gövdeli araçlar için sarkaç (kayar kasa) çekici gerekir; yanlış yöntem araca zarar verebilir.',
+      'Aramadan önce konumunuzu, araç tipini ve arıza türünü net iletmek hem doğru ekipmanın gelmesini hem de net fiyat almanızı sağlar.',
+    ],
+    points: [
+      'Konumunuzu ve varış noktasını net söyleyin.',
+      'Araç tipini belirtin (otomatik, 4x4, düşük gövde vb.).',
+      'Fiyatı önceden ve net olarak sorun.',
+      'Otomatik/4x4 araçlar için sarkaç (kayar kasa) çekici isteyin.',
+      'Aracın hasarsız taşınacağından emin olun.',
+      '7/24 ulaşılabilir bir numarayı tercih edin.',
+    ],
+    faq: [
+      ['Otomatik vitesli aracım nasıl taşınır?', 'Otomatik ve 4x4 araçlar tekerlekleri yerden kesecek şekilde sarkaç (kayar kasa) çekiciyle taşınmalıdır; biz bu yöntemle taşıyoruz.'],
+      ['Fiyatı önceden öğrenebilir miyim?', 'Evet, konum ve araç bilgisini aldığımızda net fiyatı telefonda söylüyoruz.'],
+    ],
+  },
+];
+
 // -------------------------- ŞABLONLAR --------------------------
 const locLinks = LOCATIONS.map((l) => ({ href: '/' + l.slug, label: l.town + ' Çekici' }));
 const svcLinks = SERVICES.map((s) => ({ href: '/' + s.slug, label: s.name }));
+const blogLinks = BLOG.map((b) => ({ href: '/' + b.slug, label: b.navLabel || b.name }));
 
 function head(p, extraLd) {
   const url = BASE + '/' + p.slug;
@@ -266,6 +474,10 @@ ${inner}
   </main>
   ${footer()}
 </div>
+<div class="call-bar" role="region" aria-label="Hızlı iletişim">
+  <a href="tel:${TEL}" class="call-bar-btn call-bar-call" data-cta="call" data-loc="sticky">${ICON.phone}Hemen Ara</a>
+  <a href="${WA}" class="call-bar-btn call-bar-wa" data-cta="whatsapp" data-loc="sticky"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.84-2-.94-.26-.1-.46-.15-.65.15-.2.3-.74.93-.9 1.12-.17.2-.33.22-.62.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.56-.9-2.14-.23-.56-.47-.48-.65-.5h-.55c-.2 0-.5.08-.77.37-.26.3-1 1-1 2.43s1.03 2.82 1.17 3.02c.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.68.22 1.3.19 1.8.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
+</div>
 <script src="assets/js/script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
@@ -286,6 +498,12 @@ ${locLinks.map(li).join('\n')}
         <h2 class="footer-heading">Hizmetler</h2>
         <ul>
 ${svcLinks.map(li).join('\n')}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Rehber</h2>
+        <ul>
+${blogLinks.map(li).join('\n')}
         </ul>
       </div>
     </nav>
@@ -377,7 +595,7 @@ for (const l of LOCATIONS) {
     serviceType: 'Oto Çekici ve Yol Yardım', name: `${l.town} Oto Çekici`,
     areaServed: [{ '@type': 'Place', name: l.town }, ...l.hoods.map((h) => ({ '@type': 'Place', name: h }))],
     provider: {
-      '@type': 'AutomotiveBusiness', name: 'Koleş Oto Kurtarma', telephone: TEL,
+      '@type': 'AutomotiveBusiness', '@id': BASE + '/#business', name: 'Koleş Oto Kurtarma', logo: BASE + '/assets/img/tow-truck-icon.png', telephone: TEL,
       url: BASE + '/', image: BASE + '/assets/img/og-cover.png',
       address: { '@type': 'PostalAddress', addressLocality: 'Urla', addressRegion: 'İzmir', addressCountry: 'TR' },
       geo: { '@type': 'GeoCoordinates', latitude: l.lat, longitude: l.lng },
@@ -407,7 +625,7 @@ for (const s of SERVICES) {
     serviceType: s.name, name: s.name,
     areaServed: { '@type': 'Place', name: 'Urla ve çevresi (İzmir)' },
     provider: {
-      '@type': 'AutomotiveBusiness', name: 'Koleş Oto Kurtarma', telephone: TEL,
+      '@type': 'AutomotiveBusiness', '@id': BASE + '/#business', name: 'Koleş Oto Kurtarma', logo: BASE + '/assets/img/tow-truck-icon.png', telephone: TEL,
       url: BASE + '/', image: BASE + '/assets/img/og-cover.png',
       address: { '@type': 'PostalAddress', addressLocality: 'Urla', addressRegion: 'İzmir', addressCountry: 'TR' },
     },
@@ -422,6 +640,60 @@ for (const s of SERVICES) {
   const html = head(p, serviceLd) + '\n' + chrome(inner) + '\n';
   writeFileSync(join(ROOT, `${s.slug}.html`), html);
   written.push(s.slug);
+}
+
+for (const b of BLOG) {
+  const p = {
+    slug: b.slug, title: b.title, desc: b.desc, lat: 38.3236, lng: 26.7656,
+    placename: 'Urla, İzmir', crumb: b.name, faq: b.faq,
+  };
+  const articleLd = {
+    '@context': 'https://schema.org', '@type': 'Article',
+    headline: b.name, description: b.desc,
+    datePublished: b.date, dateModified: b.date,
+    image: BASE + '/assets/img/og-cover.png',
+    mainEntityOfPage: BASE + '/' + b.slug,
+    author: { '@type': 'Organization', name: 'Koleş Oto Kurtarma' },
+    publisher: {
+      '@type': 'Organization', name: 'Koleş Oto Kurtarma',
+      logo: { '@type': 'ImageObject', url: BASE + '/assets/img/tow-truck-icon.png' },
+    },
+  };
+  const inner = [
+    breadcrumbNav(b.name),
+    heroBlock(b.name, b.lede),
+    proseBlock(b.paras, 'Adım adım', b.points, b.faq),
+    regionBlock(b.slug),
+    closingBlock(),
+  ].join('\n');
+  const html = head(p, articleLd) + '\n' + chrome(inner) + '\n';
+  writeFileSync(join(ROOT, `${b.slug}.html`), html);
+  written.push(b.slug);
+}
+
+// ---- 404 sayfası (indexlenmez, sitemap'e girmez) ----
+{
+  const head404 = `<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayfa bulunamadı (404) | Koleş Oto Kurtarma</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#201E1D">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23201E1D'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23FF6A00' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23F3F2F2' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&family=Caveat:wght@600&family=Racing+Sans+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>`;
+  const inner404 = [
+    breadcrumbNav('Sayfa bulunamadı'),
+    heroBlock('Sayfa bulunamadı (404)', 'Aradığınız sayfa taşınmış veya kaldırılmış olabilir. Ana sayfaya dönebilir ya da hemen bizi arayabilirsiniz.'),
+    regionBlock(''),
+    closingBlock(),
+  ].join('\n');
+  writeFileSync(join(ROOT, '404.html'), head404 + '\n' + chrome(inner404) + '\n');
 }
 
 // ---- sitemap.xml (ana sayfa + tüm üretilen sayfalar) ----

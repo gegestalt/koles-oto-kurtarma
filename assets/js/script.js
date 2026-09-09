@@ -45,4 +45,23 @@
       }
     });
   }
+
+  // Dönüşüm takibi: her arama (tel:) ve WhatsApp tıklamasını Vercel
+  // Analytics'e özel olay olarak gönderir. Böylece SEO'nun gerçekten
+  // telefon araması getirip getirmediği ölçülebilir.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="tel:"], a[href*="wa.me"], a[href*="api.whatsapp"]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var isCall = href.indexOf('tel:') === 0;
+    var loc = a.getAttribute('data-loc') || 'inline';
+    try {
+      if (window.va) {
+        window.va('event', {
+          name: isCall ? 'call_click' : 'whatsapp_click',
+          data: { location: loc, page: location.pathname }
+        });
+      }
+    } catch (err) { /* takip başarısız olsa da bağlantı normal çalışır */ }
+  });
 })();
